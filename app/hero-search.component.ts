@@ -19,8 +19,7 @@ export class HeroSearchComponent implements OnInit {
 
     constructor(
         private heroSearchService: HeroSearchService,
-        private router: Router)
-    {}
+        private router: Router) {}
 
     // Push a search term into the observable stream.
     search(term: string): void {
@@ -39,7 +38,7 @@ export class HeroSearchComponent implements OnInit {
             .catch(error => {
                 // TODO: real error handling
                 console.log(error);
-                return Observable.of<Hero[]>([])
+                return Observable.of<Hero[]>([]);
             });
     }
 
