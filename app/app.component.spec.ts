@@ -8,6 +8,7 @@ describe('AppComponent', function () {
   let de: DebugElement;
   let comp: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
+  let expectedMsg = 'Tour of Heroes';
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -27,7 +28,6 @@ describe('AppComponent', function () {
   it('should have expected <h1> text', () => {
     fixture.detectChanges();
     const h1 = de.nativeElement;
-    expect(h1.innerText).toMatch(/angular/i,
-      '<h1> should say something about "Angular"');
+    expect(h1.innerText).toBe(expectedMsg, '<h1> text does not match expected value');
   });
 });
