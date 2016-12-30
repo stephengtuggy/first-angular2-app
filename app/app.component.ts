@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    selector: 'my-app',
+    selector: 'toh-app',
     templateUrl: 'app.component.html',
     styleUrls: [ 'app.component.css']
 })
