@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Hero } from './hero';
-
-import { HeroService } from './hero.service';
+// import { Hero, HeroService } from './shared';
+import { Hero } from './shared/hero.model';
+import { HeroService } from './shared/hero.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { HeroService } from './hero.service';
   styleUrls: [ 'heroes.component.css' ]
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+  heroes: Hero[] = [];
   selectedHero: Hero;
 
   constructor(
@@ -26,7 +26,7 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().then((heroes: Hero[]) => this.heroes = heroes);
   }
 
   ngOnInit(): void {
@@ -41,7 +41,7 @@ export class HeroesComponent implements OnInit {
     name = name.trim();
     if (!name) { return; }
     this.heroService.create(name)
-      .then(hero => {
+      .then((hero: Hero) => {
         this.heroes.push(hero);
         this.selectedHero = null;
       });

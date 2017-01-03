@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Hero } from './heroes/hero';
-import { HeroService } from './heroes/hero.service';
+// import { Hero, HeroService } from './heroes/shared';
+import { Hero } from './heroes/shared/hero.model';
+import { HeroService } from './heroes/shared/hero.service';
 
 
 @Component({
@@ -18,6 +19,6 @@ export class DashboardComponent implements OnInit {
 
     ngOnInit(): void {
         this.heroService.getHeroes()
-            .then(heroes => this.heroes = heroes.slice(1, 5));
+            .then((heroes: Hero[]) => this.heroes = heroes.slice(1, 5));
     }
 }
