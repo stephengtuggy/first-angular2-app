@@ -70,7 +70,7 @@ module.exports = function(config) {
 
       // transpiled application & spec code paths loaded via module imports
       { pattern: appBase + '**/*.js', included: true, watched: true },
-      { pattern: testingBase + '**/*.js', included: false, watched: true },
+      { pattern: testingBase + '**/*.spec.js', included: false, watched: true },
 
 
       // Asset (HTML & CSS) paths loaded via Angular's component compiler
